@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
+<h1>글 작성 페이지</h1>
 {% block body %}
-<form action="{% url 'articles:create' %}" method="GET">
+<form action="{% url 'articles:create' %}" method="POST">
+  {% csrf_token %}
   <label for="name">제목 : </label>
   <input type='text' id = "name" name="title">
+  
   <label for="cnt">내용 : </label>
   <input type='text' id = "cnt" name="content">
 
